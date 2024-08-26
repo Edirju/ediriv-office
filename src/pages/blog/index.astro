@@ -1,111 +1,124 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import PostsRss from "../../components/sections/PostsRss.astro";
+import BlogPosts from "../../components/sections/BlogPosts.astro";
+import Footer from "../../components/Footer.astro";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+import { basics } from "../../consts/landing.json";
+const { name, label, image, location, profiles, phone, email } = basics;
+import {
+  Github,
+  Linkedin,
+  X,
+  Instagram,
+  Threads,
+  Facebook,
+} from "simple-icons-astro";
+const SOCIAL_ICONS: Record<string, any> = {
+  Github,
+  Linkedin,
+  X,
+  Instagram,
+  Threads,
+  Facebook,
+};
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title={`Galería de Proyectos de ${name} • ${label}`}>
+  <main>
+    <div
+      class="absolute inset-0 -z-10 h-full w-full bg-[rgb(var(--light))] bg-[linear-gradient(to_right,#8080800a_.0625rem,transparent_.0625rem),linear-gradient(to_bottom,#8080800a_.0625rem,transparent_.0625rem)] bg-[size:.875rem_1.5rem]"
+    >
+      <div
+        class="absolute left-0 right-0 top-0 -z-10 m-auto h-[19.375rem] w-[19.375rem] rounded-full bg-[rgb(var(--primary-50))] opacity-20 blur-[6.25rem]"
+      >
+      </div>
+    </div>
+    <Header />
+    <!-- Hero -->
+    <section class="flex flex-col justify-center max-w-xl mx-auto items-center">
+      <h1
+        class="font-bold items-center mb-8 mt-4 flex gap-4 animate-fade-in-up"
+      >
+        <span class="flex flex-col text-center gap-3 sm:gap-0">
+          <span
+            class="text-[38px] tracking-tighter px-1 inline-block bg-clip-text text-transparent bg-gradient-to-r from-[rgb(var(--dark),0.95)] to-[rgb(var(--accent-65),0.95)] sm:text-[48px]"
+          >
+            Blog+
+          </span>
+          <span
+            class="tracking-tighter text-[rgb(var(--dark),0.95)] text-3xl sm:text-[44px] md:-mt-4 -mt-6"
+          >
+            Notas
+          </span>
+        </span>
+        <span class="rotate-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="128"
+            height="128"
+            viewBox="0 0 24 24"
+            style="fill: rgb(var(--accent-65),.75);"
+            ><path
+              d="M21 20V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2zM9 18H7v-2h2v2zm0-4H7v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm2-5H5V7h14v2z"
+            ></path>
+          </svg>
+        </span>
+      </h1>
+    </section>
+    <section
+      class="flex flex-col max-w-[700px] mx-auto mb-12 gap-12 px-4 md:px-0"
+    >
+      <article
+        class="flex flex-col items-center justify-center gap-10 md:flex-row"
+      >
+        <div
+          class="[&>p]:mb-4 [&>p>strong]:text-[rgb(var(--dark),0.85)] [&>p>strong]:bg-[rgb(var(--accent-65),.25)] [&>p>strong]:font-normal [&>p>strong]:text-base text-[rgb(var(--dark),.85)] [&>p>strong]:py-0.5 [&>p>strong]:px-1 [&>p>strong]:font-mono text-lg text-pretty order-2 md:order-1 leading-normal"
+        >
+          <p>
+            ¡Hola, soy <strong>Edinson</strong>! Escribo sobre cualquier cosa
+            relacionada con la <strong>tecnología</strong>,
+            <strong>marketing</strong>, <strong>desarrollo web</strong> y de vez
+            en cuando sobre cosas <strong>interesantes</strong> que se cruzan en
+            mí camino.
+          </p>
+          <footer class="flex items-center gap-4">
+            <h3
+              class="text-sm font-bold text-[rgb(var(--accent-65),0.85)] text-pretty tracking-tighter"
+            >
+              Sígueme en:
+            </h3>
+            {
+              profiles.map(({ network, url }) => {
+                const Icon = SOCIAL_ICONS[network];
+                if (!Icon) return null;
+                return (
+                  <a
+                    href={url}
+                    title={`Visitar ${name} en ${network}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center justify-center text-[rgb(var(--dark),0.85)] hover:text-[rgb(var(--accent-65),.95)] transition-colors"
+                  >
+                    <Icon size={20} />
+                  </a>
+                );
+              })
+            }
+          </footer>
+        </div>
+        <img
+          src="/me175.webp"
+          alt="Edinson Rivera Jurado"
+          style="object-position: center"
+          class="order-1 object-cover w-52 h-full p-1 bg-[rgb(var(--light),.5)] md:order-2 rotate-3 lg:p-2 aspect-square rounded-2xl dark:bg-[rgb(var(--accent-55),0.08)]"
+        />
+      </article>
+    </section>
+
+    <BlogPosts />
+    <PostsRss />
+    <Footer />
+  </main>
+</Layout>

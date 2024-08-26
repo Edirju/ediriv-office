@@ -1,0 +1,120 @@
+---
+import { getCollection } from "astro:content";
+import Section from "../../components/Section.astro";
+import NewsIcon from "../../icons/News.astro";
+
+import FormattedDate from "../../components/FormattedDate.astro";
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Section>
+  <article class="flex flex-col gap-8 text-[rgb(var(--dark),.85)]">
+    <header class="flex flex-col gap-4">
+      <h2
+        class="flex items-center gap-1 text-xl font-bold text-pretty tracking-tighter"
+      >
+        <NewsIcon />
+        Blog | Publicaciones recientes
+      </h2>
+      <!-- <p
+            class="text-sm text-[rgb(var(--dark),.65)] font-light text-pretty leading-tight"
+          >
+            Escribo sobre cualquier cosa relacionada con la tecnología, el
+            marketing y de vez en cuando sobre cosas interesantes que se cruzan
+            en mí camino.
+          </p> -->
+    </header>
+    <footer>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}/`}>
+                <img
+                  width={720}
+                  height={360}
+                  src={post.data.heroImage}
+                  alt=""
+                />
+                <h4 class="title">{post.data.title}</h4>
+                <p class="date">
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </footer>
+  </article>
+</Section>
+
+<style>
+  ul {
+    @apply flex flex-wrap gap-4 text-[rgb(var(--dark),.85)] list-none;
+    & li {
+      width: calc(50% - 16px);
+    }
+    & li * {
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+    & li:first-child {
+      width: 100%;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    & li:first-child img {
+      width: 100%;
+    }
+    & li:first-child .title {
+      font-size: 2rem;
+    }
+    & li img {
+      margin-bottom: 8px;
+      border-radius: 0.75rem;
+    }
+    & li a {
+      display: block;
+    }
+    & .title {
+      margin: 0;
+      color: rgb(var(--dark), 0.65);
+      line-height: 1;
+    }
+    & .date {
+      margin: 0;
+      color: rgb(var(--dark), 0.5);
+      font-family: var(--font-mono);
+    }
+    & li a:hover h4,
+    & li a:hover .date {
+      color: rgb(var(--accent-65), 0.65);
+    }
+    & li a:hover img {
+      box-shadow: var(--box-shadow);
+    }
+  }
+
+  .social-posts {
+    @apply flex;
+  }
+
+  @media (max-width: 43.75rem) {
+    ul {
+      gap: 0.5em;
+      & li {
+        width: 100%;
+        text-align: center;
+      }
+      & li:first-child {
+        margin-bottom: 0;
+      }
+      & li:first-child .title {
+        font-size: 24px;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,89 @@
+---
+import Section from "../Section.astro";
+import { education } from "../../consts/cv.json";
+---
+
+<Section title="Formación Académica">
+  <ul>
+    {
+      education.map(
+        ({
+          institution,
+          url,
+          area,
+          studyType,
+          startDate,
+          endDate,
+          score,
+          courses,
+        }) => {
+          const startYear = new Date(startDate).getFullYear();
+          const endYear =
+            endDate != null ? new Date(endDate).getFullYear() : "Actual";
+          const years = `${startYear} - ${endYear}`;
+
+          return (
+            <li>
+              <article>
+                <header>
+                  <div>
+                    <h3>
+                      <a
+                        href={url}
+                        title={`Ver ${institution}`}
+                        target="_blank"
+                      >
+                        {institution}
+                      </a>
+                    </h3>
+                    <h4>{area}</h4>
+                  </div>
+                  <time>{years}</time>
+                </header>
+                <footer>
+                  <p>{studyType}</p>
+                  <p>{courses}</p>
+                </footer>
+              </article>
+            </li>
+          );
+        }
+      )
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    @apply flex flex-col gap-8;
+  }
+  header {
+    @apply flex justify-between items-start mb-1;
+  }
+  h3 {
+    @apply text-base font-medium;
+    color: rgb(var(--dark),.85);
+    &:hover {
+      @apply underline underline-offset-2;
+    }
+  }
+  h4 {
+    @apply text-sm font-normal;
+    color: rgb(var(--dark),.65);
+  }
+  time {
+    @apply text-xs min-w-[102px];
+    color: rgb(var(--dark),.55);
+  }
+  footer {
+    & p {
+      @apply text-sm font-normal;
+      font-family: var(--font-mono);
+    }
+  }
+  @media (width <= 700px) {
+    time {
+      @apply text-right;
+    }
+  }
+</style>

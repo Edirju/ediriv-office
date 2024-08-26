@@ -1,0 +1,89 @@
+---
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Resume/Hero.astro";
+import Experience from "../components/Resume/Experience.astro";
+import Education from "../components/Resume/Education.astro";
+import Skills from "../components/Resume/Skills.astro";
+import Projects from "../components/Resume/Projects.astro";
+import About from "../components/Resume/About.astro";
+import Certificates from "../components/Resume/Certificates.astro";
+import KeyboardManager from "../components/KeyboardManager.astro";
+
+import {basics} from '../consts/cv.json';
+const { name, label} = basics;
+---
+
+<Layout title={`Curriculum Vitae de${name} • ${label}`}>
+  <main>
+    <Hero />
+    <About />
+    <Experience />
+    <Skills />
+    <Education />
+    <Projects />
+    <Certificates />
+  </main>
+  <KeyboardManager />
+</Layout>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  body {
+    min-height: 100vh;
+    background: rgb(var(--light));
+    color: rgb(var(--dark));
+  }
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  p {
+    text-wrap: pretty; 
+       
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+  img,
+  video,
+  svg {
+    height: auto;
+    max-width: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+      transition: none;
+    }
+  }
+  main {
+    margin: 64px 0;
+  }
+  @media (width <= 700px) {
+    main {
+      margin: 32px 0;
+    }
+  }
+</style>
+

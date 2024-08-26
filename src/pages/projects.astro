@@ -1,0 +1,185 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Proyectos from "../components/sections/Proyectos.astro";
+
+import { basics } from "../consts/landing.json";
+import { projects } from "../consts/cv.json";
+const { name, label, image, location, profiles, phone, email } = basics;
+import {
+  Github,
+  Linkedin,
+  X,
+  Instagram,
+  Threads,
+  Facebook,
+} from "simple-icons-astro";
+const SOCIAL_ICONS: Record<string, any> = {
+  Github,
+  Linkedin,
+  X,
+  Instagram,
+  Threads,
+  Facebook,
+};
+---
+
+<Layout title="Proyectos prácticos de Desarrollo Web">
+  <main>
+    <div
+      class="absolute inset-0 -z-10 h-full w-full bg-[rgb(var(--light))] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+    >
+      <div
+        class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-[rgb(var(--primary-50))] opacity-20 blur-[100px]"
+      >
+      </div>
+    </div>
+    <Header />
+    <!-- Sections -->
+    <!-- Hero -->
+    <Section>
+      <section class="flex flex-col justify-center max-w-xl mx-auto items-center">
+        <h1
+          class="font-bold items-center mb-8 mt-4 flex gap-4 animate-fade-in-up"
+        >
+          <span class="flex flex-col text-center gap-3 sm:gap-0">
+            <span
+              class="text-7xl tracking-tighter px-1 inline-block bg-clip-text text-transparent bg-gradient-to-r from-[rgb(var(--dark),0.95)] to-[rgb(var(--primary-50),0.85)] sm:text-9xl"
+            >
+              +50
+            </span>
+            <span
+              class="tracking-tighter text-[rgb(var(--dark),0.95)] text-[32px] sm:text-[48px] -mt-8"
+            >
+              Proyectos
+            </span>
+          </span>
+          <span class="rotate-6">
+            <svg
+              class="rounded"
+              width="128"
+              height="128"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 630 630"
+            >
+              <rect width="630" height="630" fill="#ffcc33"></rect>
+              <path
+                d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z"
+              ></path>
+            </svg>
+          </span>
+        </h1>
+      </section>
+      <section class="flex flex-col max-w-3xl mx-auto mb-12 gap-12 px-4 md:px-0">
+        <article
+          class="flex flex-col items-center justify-center gap-10 md:flex-row"
+        >
+          <div
+            class="[&>p]:mb-4 [&>p>strong]:text-[rgb(var(--dark),0.85)] [&>p>strong]:bg-[rgb(var(--primary-50))] [&>p>strong]:font-normal [&>p>strong]:text-base text-[rgb(var(--dark),.85)] [&>p>strong]:py-0.5 [&>p>strong]:px-1 [&>p>strong]:font-mono text-lg text-pretty order-2 md:order-1 leading-normal"
+          >
+            <p>
+              ¡Hola, soy <strong>Edinson</strong>! Tengo la inquietante necesidad
+              de <strong>construir cosas</strong>. A veces el trabajo fluye con facilidad, otras
+              veces me cuestiono mis decisiones. Nunca dejo de <strong>aprender</strong>. He aquí
+              varias recopilaciones a lo largo de este camino.
+            </p>
+            <footer class="flex items-center gap-4">
+              <h3
+                class="text-sm font-bold text-[rgb(var(--dark),0.80)] text-pretty tracking-tighter"
+              >
+                Sígueme en:
+              </h3>
+              {
+                profiles.map(({ network, url }) => {
+                  const Icon = SOCIAL_ICONS[network];
+                  if (!Icon) return null;
+                  return (
+                    <a
+                      href={url}
+                      title={`Visitar ${name} en ${network}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="inline-flex items-center justify-center text-[rgb(var(--dark),0.85)] hover:text-[rgb(var(--primary-50),1)] transition-colors"
+                    >
+                      <Icon size={20} />
+                    </a>
+                  );
+                })
+              }
+            </footer>
+          </div>
+          <img
+            src="/me175.webp"
+            alt="Edinson Rivera Jurado"
+            style="object-position: center"
+            class="order-1 object-cover w-52 h-full p-1 bg-[rgb(var(--light),.5)] md:order-2 rotate-3 lg:p-2 aspect-square rounded-2xl dark:bg-[rgb(var(--primary-50),0.10)]"
+          />
+        </article>
+      </section>
+    </Section>
+
+    <!-- <section class="flex flex-col max-w-3xl mx-auto mb-12 gap-12 px-4 md:px-0">
+      <ul
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 -ms-[6px] -me-[6px]"
+      >
+        {
+          projects.map(
+            ({ url, description, highlights, name, isActive, github }) => {
+              return (
+                <li class="sm:border md:border rounded-lg overflow-hidden p-2">
+                  <article class="flex flex-col justify-between gap-2 h-full">
+                    <header>
+                      <h3 class="flex items-center gap-1">
+                        <a
+                          href={url}
+                          title={`Ver el proyecto ${name}`}
+                          target="_blank"
+                          class="text-sm font-medium tracking-tighter text-pretty text-[rgb(var(--dark),0.85)] hover:underline hover:underline-offset-2 hover:text-[rgb(var(--accent-65),1)]"
+                        >
+                          {name}
+                        </a>
+                        {isActive && (
+                          <span class="text-[#00bc2f] inset-0">•</span>
+                        )}
+                        {github && (
+                          <a
+                            href={github}
+                            title={`Visitar el repositorio de ${name} en GitHub`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="github-code-link ml-1 hover:text-[rgb(var(--primary-50),1)]"
+                          >
+                            <Github size={16} />
+                          </a>
+                        )}
+                      </h3>
+                      <p class="text-xs font-mono font-normal text-pretty leading-tight text-[rgb(var(--dark),0.55)]">
+                        {description}
+                      </p>
+                    </header>
+                    <footer>
+                      <ul class="flex flex-wrap gap-1">
+                        {highlights.map((highlight) => {
+                          return (
+                            <span class="text-[10px] bg-[rgb(var(--primary-50),0.25)] text-[rgb(var(--dark),0.55)] py-0.5 px-1 rounded-full">
+                              {highlight}
+                            </span>
+                          );
+                        })}
+                      </ul>
+                    </footer>
+                  </article>
+                </li>
+              );
+            }
+          )
+        }
+      </ul>
+    </section> -->
+    <!-- End Sections -->
+    <Proyectos />
+    <Footer />
+  </main>
+</Layout>

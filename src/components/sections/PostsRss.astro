@@ -1,0 +1,65 @@
+---
+import Section from "../Section.astro";
+import NewsIcon from "../../icons/News.astro";
+import { Rss } from "simple-icons-astro";
+import { posteos } from "../../consts/social-rss.json";
+---
+
+<Section>
+  <article>
+    <header>
+      <h2>
+        <NewsIcon />
+        Blog | Social Media posts.
+      </h2>
+      <!-- <p>
+        Escribo sobre cualquier cosa relacionada con la tecnología, el marketing
+        y de vez en cuando sobre cosas interesantes que se cruzan en mí camino.
+      </p> -->
+    </header>
+    <footer>
+      <ul>
+        {
+          posteos.map(({ network, title, description, url, date }) => {
+            return (
+              <li>
+                <a href={url}>
+                  <Rss size={16} />
+                  <div class="border-l border-[rgb(var(--dark),.35)] pl-2">
+                    <h3 class="text-sm font-bold">{title}</h3>
+                    <p class="text-xs font-extralight text-[rgb(var(--dark),.5)]">
+                      {network}
+                    </p>
+                  </div>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </footer>
+  </article>
+</Section>
+
+<style>
+  article {
+    @apply flex flex-col gap-4;
+    & header {
+      @apply flex flex-col gap-4;
+      & h2 {
+        @apply flex items-center gap-2 text-xl font-bold text-pretty tracking-tighter;
+      }
+      & p {
+        @apply text-sm font-light text-pretty leading-5;
+      }
+    }
+    & footer {
+      & ul {
+        @apply flex flex-col gap-2 mt-4;
+        & li a {
+          @apply flex items-center gap-2 hover:bg-[rgb(var(--accent-50),.2)] px-4 py-2 rounded-lg w-full transition-all duration-300 ease-in-out;
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,127 @@
+---
+import Section from "../Section.astro";
+import WorldMap from "../../icons/WorldMap.astro";
+import Phone from "../../icons/Phone.astro";
+import Mail from "../../icons/Mail.astro";
+import { Github, Linkedin } from "simple-icons-astro";
+const SOCIAL_ICONS: Record<string, any> = { Github, Linkedin };
+import { basics } from "../../consts/cv.json";
+const { name, label, image, location, profiles, phone, email } = basics;
+const { city, region } = location;
+const linkedInfo = profiles.find(({ network }) => network === "LinkedIn");
+const linkedUrl = linkedInfo?.url;
+const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
+---
+
+<Section>
+  <div class="hero_container">
+    <div class="hero-info">
+      <h1>{name}</h1>
+      <h2>{label}</h2>
+      <span>
+        <WorldMap />
+        {city} • {region}
+      </span>
+      <footer class="print">
+        {printInfo}
+      </footer>
+      <footer class="no-print">
+        {
+          email && (
+            <a 
+              href={`mailto:${email}`}
+              title={`Enviar un correo electrónico a ${name} al email: ${email}`}
+            >
+              <Mail />
+            </a>
+          )
+        }
+        {
+          phone && (
+            <a 
+              href={`tel:${phone}`}
+              title={`Llamar a ${name} al teléfono: ${phone}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Phone />
+            </a>
+          )
+        }
+        {
+          profiles.map(({ network, url})=> {
+            const Icon = SOCIAL_ICONS[network];
+            if (!Icon) return null;
+            return (
+              <a 
+                href={url}
+                title={`Visitar el perfil de ${name} en ${network}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon size={16} />
+              </a>
+            )
+          })
+        }
+      </footer>
+    </div>
+    <figure>
+      <img src={image} alt={name} />
+    </figure>
+  </div>
+</Section>
+
+<style>
+  .hero_container {
+    @apply flex flex-row items-center justify-between gap-4;
+  }
+  .hero-info {
+    @apply flex flex-col;
+    & h1 {
+      @apply text-2xl font-bold;
+    }
+    & h2 {
+      @apply text-sm text-balance;
+      color: rgb(var(--dark),.85);
+      font-family: var(--font-mono);
+    }
+    & span {
+      @apply flex items-center gap-1 tracking-tighter text-[13.6px] text-[rgb(var(--dark),.45)];
+      font-family: var(--font-mono);
+    }
+    & footer {
+      @apply flex gap-1 mt-2 text-[rgb(var(--dark),.85)] text-[0.65rem];
+      & a {
+        @apply inline-flex items-center justify-center text-[rgb(var(--dark),.65)] border rounded-md p-1 size-8;
+        transition: all .3s ease;
+        &:hover {
+          background-color: rgb(var(--dark),.03);
+          border: 1px solid rgb(var(--dark),.1);
+        }
+      }
+    }
+  }
+  figure {
+    & img {
+      @apply w-3/4 aspect-square object-cover rounded-md;
+    }
+  }
+  @media (width <= 700px) {
+    .hero_container {
+      @apply flex-col-reverse;
+    }
+    .hero-info {
+      @apply items-center justify-center text-center pr-0;
+      & h2 {
+        @apply text-balance;
+      }
+    }
+    figure {
+      @apply flex justify-center items-center mx-auto;
+      & img {
+        width: 150px
+      }
+    }
+  }
+</style>

@@ -1,0 +1,95 @@
+---
+import Section from "../Section.astro";
+import { skills } from "../../consts/cv.json";
+import {
+  Html5,
+  Css3,
+  Javascript,
+  Git,
+  Python,
+  Vite,
+  React,
+  Bootstrap,
+  Tailwindcss,
+  Github,
+  Figma,
+  Slack,
+  Notion,
+  Hubspot,
+  Gumroad,
+  Googleads,
+  Googlegemini,
+  Openai,
+  Meta,
+  Googleanalytics,
+  Typescript,
+  Mysql,
+  Blogger,
+} from "simple-icons-astro";
+import Astrojs from "../../icons/AstroIcon.astro";
+import Next from "../../icons/Next.astro";
+import Node from "../../icons/Node.astro";
+const SKILLS_ICONS: Record<string, any> = {
+  Html5,
+  Css3,
+  Javascript,
+  Next,
+  Node,
+  Git,
+  Python,
+  React,
+  Tailwindcss,
+  Github,
+  Vite,
+  Bootstrap,
+  Astrojs,
+  Figma,
+  Slack,
+  Notion,
+  Hubspot,
+  Gumroad,
+  Googleads,
+  Googlegemini,
+  Openai,
+  Meta,
+  Googleanalytics,
+  Typescript,
+  Mysql,
+  Blogger,
+};
+---
+
+<Section title="Habilidades">
+  <ul>
+    {
+      skills.map(({name}) => {
+        const iconName = name === 'HTML' ? 'Html5' : name;
+        const Icon = SKILLS_ICONS[iconName];
+        if (!Icon) return null;
+
+        return (
+          <li>
+            <Icon size={16} />
+            <span>{name}</span>
+          </li>
+        )
+      })
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    @apply inline-flex flex-wrap gap-2;
+  }
+  li {
+    @apply flex items-center gap-1 p-1 text-xs;
+    color: rgb(var(--dark),.65);
+    background-color: rgb(var(--dark),.08);
+    font-family: var(--font-mono);
+    transition: all .2s ease-in-out;
+    &:hover {
+      background-color: rgb(var(--dark),.25);
+    }
+  }
+</style> 

@@ -1,0 +1,166 @@
+---
+import Section from "../Section.astro";
+import { basics } from "../../consts/landing.json";
+const { name, label, image, location, profiles, phone, email } = basics;
+const { city, region } = location;
+import {
+  Github,
+  Linkedin,
+  X,
+  Instagram,
+  Threads,
+  Facebook,
+} from "simple-icons-astro";
+import Mail from "../../icons/Mail.astro";
+import Phone from "../../icons/Phone.astro";
+import WorldMap from "../../icons/WorldMap.astro";
+const SOCIAL_ICONS: Record<string, any> = {
+  Github,
+  Linkedin,
+  X,
+  Instagram,
+  Threads,
+  Facebook,
+};
+const linkedInfo = profiles.find(({ network }) => network === "Linkedin");
+const linkedUrl = linkedInfo?.url;
+const XInfo = profiles.find(({ network }) => network === "X");
+const XUrl = XInfo?.url;
+const instagramInfo = profiles.find(({ network }) => network === "Instagram");
+const instagramUrl = instagramInfo?.url;
+const githubInfo = profiles.find(({ network }) => network === "Github");
+const githubUrl = githubInfo?.url;
+const threadsInfo = profiles.find(({ network }) => network === "Threads");
+const threadsUrl = threadsInfo?.url;
+const printInfo = [
+  email,
+  phone,
+  linkedUrl,
+  githubUrl,
+  XUrl,
+  instagramUrl,
+  threadsUrl,
+]
+  .filter(Boolean)
+  .join(" • ");
+---
+
+<Section>
+  <article class="hero-section">
+    <div class="hero-info">
+      <h1>{name}</h1>
+      <h2>
+        {label}
+      </h2>
+      <span>
+        <WorldMap />
+        Encuéntrame en:
+      </span>
+      <footer class="print">
+        {printInfo}
+      </footer>
+      <footer class="no-print">
+        {
+          email && (
+            <a
+              href={`mailto:${email}`}
+              title={`Enviar un correo a ${name} • ${email}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Mail />
+            </a>
+          )
+        }
+        {
+          phone && (
+            <a
+              href={`Tel:${phone}`}
+              title={`Llamar a ${name} al ${phone}`}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <Phone />
+            </a>
+          )
+        }
+        {
+          profiles.map(({ network, url }) => {
+            const Icon = SOCIAL_ICONS[network];
+            if (!Icon) return null;
+            return (
+              <a
+                href={url}
+                title={`Visitar ${name} en ${network}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icon class="w-4 h-4" />
+              </a>
+            );
+          })
+        }
+      </footer>
+    </div>
+
+    <figure class="hero-image rotate-6">
+      <img src={image} alt={name} />
+    </figure>
+  </article>
+</Section>
+
+<style>
+  .hero-section {
+    @apply flex flex-row items-center justify-center gap-4 animate-fade-in-up;
+    color: rgb(var(--dark), 0.85);
+  }
+  .hero-image {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 50%;
+    & img {
+      @apply rounded-2xl order-1 object-cover w-52 h-full p-1 bg-[rgb(var(--light))] rotate-3 dark:bg-[rgb(var(--accent-50),0.10)];
+    }    
+  }
+  .hero-info {
+    @apply flex flex-col gap-2;
+    & h1 {
+      @apply font-black tracking-tighter leading-tight text-pretty bg-clip-text text-transparent bg-gradient-to-r from-[rgb(var(--dark),0.80)] to-[rgb(var(--accent-65),0.95)];
+      font-size: clamp(24px, 2.105vw + 1.079rem, 32px);
+    }
+    & h2 {
+      @apply text-pretty font-light tracking-tight;
+      font-size: clamp(0.938rem, 0.25vw + 0.891rem, 1rem);
+    }
+    & span {
+      @apply flex items-center gap-1 text-sm text-pretty font-medium;
+      color: rgb(var(--dark), 0.65);
+    }
+  }
+  footer {
+    @apply flex items-center gap-2;
+    color: rgb(var(--dark), 0.65);
+    & a {
+      @apply inline-flex items-center justify-center size-8 rounded-md;
+      border: 1px solid rgb(var(--dark), 0.10);
+      transition: all 0.2s ease;
+      &:hover {
+        border: 1px solid rgb(var(--accent-65), 0.25);
+        background: rgb(var(--accent-50), 0.05);
+        color: rgb(var(--accent-65), 0.95);
+      }
+    }
+  }
+  @media (width <= 700px) {
+    .hero-section {
+      @apply flex-col-reverse;
+    }
+    .hero-info {
+      @apply items-center text-center pr-0;
+    }
+    figure {
+      @apply flex items-center justify-center;
+      margin: 0 auto;
+    }
+  }
+</style>

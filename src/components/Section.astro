@@ -1,0 +1,25 @@
+---
+const { title } = Astro.props;
+---
+<section>
+  {
+    title && <h2>{title}</h2>
+  }
+  <slot />
+</section>
+
+<style>
+  section {
+    margin: 0 auto 72px;
+    max-width: 700px;
+    & h2 {
+      @apply text-xl font-bold not-italic leading-normal mb-2;
+    }
+  }
+  @media (width <= 700px) {
+    section {
+      padding: 0 16px;
+      margin-bottom: 38px;
+    }
+  }
+</style>

@@ -1,0 +1,80 @@
+---
+import "@fontsource-variable/inter";
+import "@fontsource-variable/inconsolata";
+import { ViewTransitions } from "astro:transitions";
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+const description = "Welcome to my website!";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Edinson Rivera Jurado" />
+    <meta
+      name="keywords"
+      content="javascript, js, programación, desarrollo web, social media, community manager, gestor de contenidos, gestor redes sociales"
+    />
+    <meta name="theme-color" content="#ffcc33" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>    
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --font-heading: "Inter Variable", sans-serif;
+    --font-body: "Inter Variable", sans-serif;
+    --font-mono: "Inconsolata Variable", monospace;
+
+    --white: 255, 255, 255; /* #FFFFFF */
+    --black: 0, 0, 0; /* #000000 */
+    --dark: 30, 37, 44; /* #1E252C */
+    --light: 255, 253, 248; /* #FFFEFE */
+    --accent-50: 0, 216, 255; /* #00D8FF */
+    --accent-55: 255, 83, 182; /* #FF53B6 */
+    --accent-60: 47, 72, 88; /* #2D4858 */
+    --accent-65: 0, 78, 146; /* #004E92 */
+    --primary-50: 255, 204, 51; /* #FFCC33 */
+
+    --box-shadow: 0 2px 6px rgba(var(--dark), 1.5%),
+      0 8px 24px rgba(var(--dark), 5%), 0 16px 32px rgba(var(--dark), 5%);
+  }
+  html,
+  body {
+    font-family: var(--font-body);  
+  }
+  html {
+    background: rgb(var(--light), 1);    
+  }
+  code {
+    font-family: var(--font-mono);
+  }
+  .print {
+    display: none !important;
+  }
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    .print {
+      display: block !important;
+    }
+    article {
+      break-inside: avoid;
+    }
+    astro-dev-toolbar {
+      display: none !important;
+    }
+  }
+</style>
