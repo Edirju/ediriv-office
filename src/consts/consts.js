@@ -16,8 +16,7 @@ export const PROJECTS = [
   {
     slug: "02-music-player",
     title: "Simple Music Player",
-    description:
-      "Aplicación que permite la reproducción de audios.",
+    description: "Aplicación que permite la reproducción de audios.",
     learnings: [
       "Loop",
       "Eventos de teclado",
@@ -27,7 +26,21 @@ export const PROJECTS = [
     youtube: "#",
   },
   {
-    slug: "03-midu-typing-game",
+    slug: "03-game-css-animations",
+    title: "BunnyGame - Animated CSS",
+    description: "Animaciones con gestos y CSS.",
+    learnings: ["Transiciones CSS", "Eventos de mouse", "Sprites"],
+    youtube: "#",
+  },
+  {
+    slug: "04-pomodoro-app",
+    title: "Pomodoro App",
+    description: "Aplicacion de Pomodoro, temporizadores de tiempo.",
+    learnings: ["Métodos", "Eventos de teclado", "Sprites"],
+    youtube: "#",
+  },
+  {
+    slug: "05-midu-typing-game",
     title: "Reto de Mecanografía",
     description: "Pon a prueba tus habilidades de mecanografía con este reto",
     learnings: [
@@ -42,7 +55,20 @@ export const PROJECTS = [
     youtube: "https://www.youtube.com/watch?v=157qVlTelOg",
   },
   {
-    slug: "04-chatgpt-local",
+    slug: "06-arkanoid-game",
+    title: "Arkanoid Game",
+    description:
+      "Juego mítico y clásico de Arkanoid para controlar con teclado",
+    learnings: [
+      "Dibujar en Canvas",
+      "Eventos de teclado",
+      "RequestAnimationFrame",
+      "Sprites",
+    ],
+    youtube: "https://www.youtube.com/watch?v=b6du6MvQmuQ",
+  },
+  {
+    slug: "07-chatgpt-local",
     title: "ChatGPT local",
     description: "Usa IA de forma local y gratis. 100% privacidad.",
     learnings: ["Web Workers", "IA", "ESModules"],
@@ -52,18 +78,7 @@ export const PROJECTS = [
     youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
   },
   {
-    slug: "05-api-geo-ip",
-    title: "Buscar info de IP",
-    description:
-      "Llama a una API para obtener información de cualquier IP y muestra la información en pantalla",
-    learnings: ["Fetch API", "Formularios", "Asincronía"],
-    theme: {
-      isDark: true,
-    },
-    youtube: "https://www.youtube.com/watch?v=6AMKwVcpYTk",
-  },
-  {
-    slug: "06-tetris-canvas",
+    slug: "08-tetris-canvas",
     title: "Tetris en Canvas",
     description:
       "Resolvemos una prueba técnica que te propone crear el Tetris en 40 minutos",
@@ -74,7 +89,7 @@ export const PROJECTS = [
     youtube: "https://www.youtube.com/watch?v=pNiyz0sl1no",
   },
   {
-    slug: "07-tier-maker",
+    slug: "09-tier-maker",
     title: "Tier Maker",
     description:
       "Arrastra y suelta las imágenes para crear tus propias listas de niveles",
@@ -85,7 +100,7 @@ export const PROJECTS = [
     youtube: "https://www.youtube.com/watch?v=LPzG0PnOzgA",
   },
   {
-    slug: "08-excel-js",
+    slug: "10-excel-js",
     title: "Hojas de cálculo",
     description: "Crea tu propio Excel sin dependencias y funcional",
     learnings: ["Tablas", "Eventos de Input: focus y blur", "Eval"],

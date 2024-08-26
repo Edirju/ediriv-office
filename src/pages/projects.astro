@@ -40,7 +40,9 @@ const SOCIAL_ICONS: Record<string, any> = {
     <!-- Sections -->
     <!-- Hero -->
     <Section>
-      <section class="flex flex-col justify-center max-w-xl mx-auto items-center">
+      <section
+        class="flex flex-col justify-center max-w-xl mx-auto items-center"
+      >
         <h1
           class="font-bold items-center mb-8 mt-4 flex gap-4 animate-fade-in-up"
         >
@@ -72,7 +74,9 @@ const SOCIAL_ICONS: Record<string, any> = {
           </span>
         </h1>
       </section>
-      <section class="flex flex-col max-w-3xl mx-auto mb-12 gap-12 px-4 md:px-0">
+      <section
+        class="flex flex-col max-w-3xl mx-auto mb-12 gap-12 px-4 md:px-0"
+      >
         <article
           class="flex flex-col items-center justify-center gap-10 md:flex-row"
         >
@@ -80,10 +84,11 @@ const SOCIAL_ICONS: Record<string, any> = {
             class="[&>p]:mb-4 [&>p>strong]:text-[rgb(var(--dark),0.85)] [&>p>strong]:bg-[rgb(var(--primary-50))] [&>p>strong]:font-normal [&>p>strong]:text-base text-[rgb(var(--dark),.85)] [&>p>strong]:py-0.5 [&>p>strong]:px-1 [&>p>strong]:font-mono text-lg text-pretty order-2 md:order-1 leading-normal"
           >
             <p>
-              ¡Hola, soy <strong>Edinson</strong>! Tengo la inquietante necesidad
-              de <strong>construir cosas</strong>. A veces el trabajo fluye con facilidad, otras
-              veces me cuestiono mis decisiones. Nunca dejo de <strong>aprender</strong>. He aquí
-              varias recopilaciones a lo largo de este camino.
+              ¡Hola, soy <strong>Edinson</strong>! Tengo la inquietante
+              necesidad de <strong>construir cosas</strong>. A veces el trabajo
+              fluye con facilidad, otras veces me cuestiono mis decisiones.
+              Nunca dejo de <strong>aprender</strong>. He aquí varias
+              recopilaciones a lo largo de este camino.
             </p>
             <footer class="flex items-center gap-4">
               <h3
@@ -183,3 +188,9 @@ const SOCIAL_ICONS: Record<string, any> = {
     <Footer />
   </main>
 </Layout>
+
+<style>
+  main {
+    @apply min-h-screen relative;
+  }
+</style>
