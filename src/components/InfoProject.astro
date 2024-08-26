@@ -53,8 +53,8 @@ const { isDark = false } = theme;
   <a 
     href="/"
     class:list={[
-      isDark ? "text-[rgb(var(--white),.9)]" : "text-[rgb(var(--dark),.9)]",
       "text-xs hover:underline hover:underline-offset-2 animate-fade-in animate-delay-800",
+      isDark ? "text-white/90" : "text-black/90",
     ]}
   > 
     ← Regresar a Proyectos.

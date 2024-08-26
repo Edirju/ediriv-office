@@ -14,17 +14,17 @@ export const PROJECTS = [
     youtube: "https://www.youtube.com/watch?v=u01WD_YNENY",
   },
   {
-    slug: "02-arkanoid-game",
-    title: "Arkanoid Game",
+    slug: "02-music-player",
+    title: "Simple Music Player",
     description:
-      "Juego mítico y clásico de Arkanoid para controlar con teclado",
+      "Aplicación que permite la reproducción de audios.",
     learnings: [
-      "Dibujar en Canvas",
+      "Loop",
       "Eventos de teclado",
       "RequestAnimationFrame",
       "Sprites",
     ],
-    youtube: "https://www.youtube.com/watch?v=b6du6MvQmuQ",
+    youtube: "#",
   },
   {
     slug: "03-midu-typing-game",
