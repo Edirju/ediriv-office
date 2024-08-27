@@ -40,7 +40,7 @@ export const PROJECTS = [
     youtube: "#",
   },
   {
-    slug: "05-midu-typing-game",
+    slug: "05-typing-game",
     title: "Reto de Mecanografía",
     description: "Pon a prueba tus habilidades de mecanografía con este reto",
     learnings: [
