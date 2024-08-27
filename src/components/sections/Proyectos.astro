@@ -18,7 +18,9 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
       <Data class="w-6 h-6" />
       Proyectos
     </h2>
-    <p class="text-sm font-light text-pretty leading-5 text-[rgb(var(--dark),.55)] tracking-tight">
+    <p
+      class="text-sm font-light text-pretty leading-5 text-[rgb(var(--dark),.55)] tracking-tight"
+    >
       Tengo la inquietante necesidad de construir cosas. A veces el trabajo
       fluye con facilidad, otras veces me cuestiono mis decisiones.
     </p>
@@ -71,7 +73,7 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
               <ul class="flex flex-wrap gap-2 mt-4">
                 <li>
                   <a
-                    href="#"
+                    href={`https://github.com/Edirju/ediriv-office/tree/main/public/projects/${project.slug}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     class="inline-flex gap-1 items-center justify-center px-2 py-1 text-xs font-medium text-center text-[rgb(var(--dark),.65)] bg-[rgb(var(--light))] transition border border-[rgb(var(--dark),.25)] rounded-lg hover:bg-[rgb(var(--dark),.05)] "
@@ -82,7 +84,7 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
                 </li>
                 <li>
                   <a
-                    href=""
+                    href={`/${project.slug}`}
                     class="inline-flex gap-1 items-center justify-center px-2 py-1 text-xs font-semibold text-center text-[rgb(var(--accent-65),.65)] bg-[rgb(var(--light))] transition border border-[rgb(var(--accent-65),.25)] rounded-lg hover:bg-[rgb(var(--accent-65),.1)]"
                   >
                     <WorldMap class="w-4 h-4" />
