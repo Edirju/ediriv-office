@@ -55,6 +55,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 <style>
   main {
+    @apply min-h-screen relative;
     width: calc(100% - 2em);
     max-width: 100%;
     margin: 0 auto;
@@ -73,7 +74,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     max-width: calc(100% - 2em);
     margin: auto;
     padding: 1em;
-    color: rgb(var(--dark),.85);
+    color: rgb(var(--dark), 0.85);
     font-size: 14px;
     letter-spacing: 0.009em;
     text-wrap: pretty;
@@ -84,16 +85,16 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     padding: 1em 0;
     text-align: center;
     line-height: 1;
-    color: rgb(var(--dark),.85);
+    color: rgb(var(--dark), 0.85);
     font-size: 2rem;
-    font-weight: 700;  
+    font-weight: 700;
   }
   .title h1 {
     margin: 0 0 0.5em 0;
   }
   .date {
     margin-bottom: 0.5em;
-    color: rgb(var(--accent-65),.65);
+    color: rgb(var(--accent-65), 0.65);
     font-family: var(--font-mono);
     font-size: 14px;
   }
