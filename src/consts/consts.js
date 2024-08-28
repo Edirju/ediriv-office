@@ -67,45 +67,45 @@ export const PROJECTS = [
     ],
     youtube: "https://www.youtube.com/watch?v=b6du6MvQmuQ",
   },
-  {
-    slug: "07-chatgpt-local",
-    title: "ChatGPT local",
-    description: "Usa IA de forma local y gratis. 100% privacidad.",
-    learnings: ["Web Workers", "IA", "ESModules"],
-    theme: {
-      isDark: false,
-    },
-    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
-  },
-  {
-    slug: "08-tetris-canvas",
-    title: "Tetris en Canvas",
-    description:
-      "Resolvemos una prueba técnica que te propone crear el Tetris en 40 minutos",
-    learnings: ["Canvas", "Eventos de teclado", "Lógica de programación"],
-    theme: {
-      isDark: true,
-    },
-    youtube: "https://www.youtube.com/watch?v=pNiyz0sl1no",
-  },
-  {
-    slug: "09-tier-maker",
-    title: "Tier Maker",
-    description:
-      "Arrastra y suelta las imágenes para crear tus propias listas de niveles",
-    learnings: ["Drag & Drop", "Input de imágenes", "CSS Custom Properties"],
-    theme: {
-      isDark: true,
-    },
-    youtube: "https://www.youtube.com/watch?v=LPzG0PnOzgA",
-  },
-  {
-    slug: "10-excel-js",
-    title: "Hojas de cálculo",
-    description: "Crea tu propio Excel sin dependencias y funcional",
-    learnings: ["Tablas", "Eventos de Input: focus y blur", "Eval"],
-    theme: {
-      isDark: false,
-    },
-  },
+  // {
+  //   slug: "07-chatgpt-local",
+  //   title: "ChatGPT local",
+  //   description: "Usa IA de forma local y gratis. 100% privacidad.",
+  //   learnings: ["Web Workers", "IA", "ESModules"],
+  //   theme: {
+  //     isDark: false,
+  //   },
+  //   youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  // },
+  // {
+  //   slug: "08-tetris-canvas",
+  //   title: "Tetris en Canvas",
+  //   description:
+  //     "Resolvemos una prueba técnica que te propone crear el Tetris en 40 minutos",
+  //   learnings: ["Canvas", "Eventos de teclado", "Lógica de programación"],
+  //   theme: {
+  //     isDark: true,
+  //   },
+  //   youtube: "https://www.youtube.com/watch?v=pNiyz0sl1no",
+  // },
+  // {
+  //   slug: "09-tier-maker",
+  //   title: "Tier Maker",
+  //   description:
+  //     "Arrastra y suelta las imágenes para crear tus propias listas de niveles",
+  //   learnings: ["Drag & Drop", "Input de imágenes", "CSS Custom Properties"],
+  //   theme: {
+  //     isDark: true,
+  //   },
+  //   youtube: "https://www.youtube.com/watch?v=LPzG0PnOzgA",
+  // },
+  // {
+  //   slug: "10-excel-js",
+  //   title: "Hojas de cálculo",
+  //   description: "Crea tu propio Excel sin dependencias y funcional",
+  //   learnings: ["Tablas", "Eventos de Input: focus y blur", "Eval"],
+  //   theme: {
+  //     isDark: false,
+  //   },
+  // },
 ];
