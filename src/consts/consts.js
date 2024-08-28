@@ -55,15 +55,15 @@ export const PROJECTS = [
     youtube: "https://www.youtube.com/watch?v=157qVlTelOg",
   },
   {
-    slug: "06-arkanoid-game",
-    title: "Arkanoid Game",
+    slug: "06-pixel-art-generator",
+    title: "Pixel Art Generator",
     description:
-      "Juego mítico y clásico de Arkanoid para controlar con teclado",
+      "Aplicación clásica para dibujar píxeles con un color y un tamaño",
     learnings: [
       "Dibujar en Canvas",
-      "Eventos de teclado",
-      "RequestAnimationFrame",
-      "Sprites",
+      "Function",
+      "Eventos de teclado",      
+      "Touch",
     ],
     youtube: "https://www.youtube.com/watch?v=b6du6MvQmuQ",
   },
