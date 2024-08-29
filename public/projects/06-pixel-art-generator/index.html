@@ -58,7 +58,7 @@
 
   span {
     position: relative;
-    font-size: 1.375rem;
+    font-size: 22px;
     bottom: -1px;
   }
 
@@ -111,6 +111,28 @@
       height: 0.8em;
       width: 0.8em;
     }
+    .opt-wrapper:nth-of-type(1){
+      margin-bottom: 10px;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .opt-wrapper:nth-of-type(2){
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;      
+      & button {
+        font-size: 12px;
+      }
+
+      /*margin-bottom: 10px;
+      gap: 5px;
+      justify-content: center;
+      & button {
+        font-size: 12px;
+      }*/
+    }
   }
 </style>
 
@@ -135,7 +157,7 @@
     touch: {
       down: "touchstart",
       up: "touchend",
-      mobe: "touchmove",
+      move: "touchmove",
     },
   }
 
