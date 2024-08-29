@@ -67,6 +67,16 @@ export const PROJECTS = [
     ],
     youtube: "https://www.youtube.com/watch?v=b6du6MvQmuQ",
   },
+  {
+    slug: "07-rich-text-editor",
+    title: "Mini Office Word",
+    description: "Editor similar a Word, pero más pequeño",
+    learnings: ["Custom CSS", "Functions", "ESModules"],
+    theme: {
+      isDark: false,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
   // {
   //   slug: "07-chatgpt-local",
   //   title: "ChatGPT local",
