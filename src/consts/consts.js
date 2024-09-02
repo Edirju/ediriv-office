@@ -27,7 +27,7 @@ export const PROJECTS = [
   },
   {
     slug: "03-game-css-animations",
-    title: "BunnyGame - Animated CSS",
+    title: "Bunny - Juego con CSS",
     description: "Animaciones con gestos y CSS.",
     learnings: ["Transiciones CSS", "Eventos de mouse", "Sprites"],
     youtube: "#",
@@ -59,17 +59,12 @@ export const PROJECTS = [
     title: "Pixel Art Generator",
     description:
       "Aplicación clásica para dibujar píxeles con un color y un tamaño",
-    learnings: [
-      "Dibujar en Canvas",
-      "Function",
-      "Eventos de teclado",      
-      "Touch",
-    ],
+    learnings: ["Dibujar en Canvas", "Function", "Eventos de teclado", "Touch"],
     youtube: "https://www.youtube.com/watch?v=b6du6MvQmuQ",
   },
   {
     slug: "07-rich-text-editor",
-    title: "Mini Office Word",
+    title: "Editor Online",
     description: "Editor similar a Word, pero más pequeño",
     learnings: ["Custom CSS", "Functions", "ESModules"],
     theme: {
@@ -77,6 +72,37 @@ export const PROJECTS = [
     },
     youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
   },
+  {
+    slug: "08-password-generator",
+    title: "Crea contraseñas",
+    description: "Generador de contraseñas de forma segura",
+    learnings: ["Custom CSS", "Functions", "ESModules"],
+    theme: {
+      isDark: false,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
+  {
+    slug: "09-qr-code-generator",
+    title: "Crea códigos QR",
+    description: "Generador de códigos QR en JS",
+    learnings: ["Custom CSS", "Functions", "ESModules"],
+    theme: {
+      isDark: true,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
+  {
+    slug: "10-adivinanza-juego",
+    title: "Adivina el número",
+    description: "Juego que nos permite adivinar un número",
+    learnings: ["Custom CSS", "Funciones", "Condicionales"],
+    theme: {
+      isDark: false,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
+  
   // {
   //   slug: "07-chatgpt-local",
   //   title: "ChatGPT local",
