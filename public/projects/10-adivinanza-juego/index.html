@@ -46,7 +46,7 @@
 </style>
 
 <script>
-  let mumeroAzar = Math.floor(Math.random() * 100) + 1;
+  let numeroAzar = Math.floor(Math.random() * 100) + 1;
   let numeroEntrada = document.getElementById("numeroEntrada");
   let mensaje = document.getElementById("mensaje");
   let intento = document.getElementById("intento");
@@ -62,11 +62,11 @@
       mensaje.style.color = "black";
       return;
     }
-    if(numeroIngresado === mumeroAzar) {
+    if(numeroIngresado === numeroAzar) {
       mensaje.textContent = "¡Felicitaciones! Has adivinado el número.";
       mensaje.style.color = "green";
       numeroEntrada.disabled = true;
-    } else if (numeroIngresado < mumeroAzar) {
+    } else if (numeroIngresado < numeroAzar) {
       mensaje.textContent = "Lo siento, pero el número es mayor.";
       mensaje.style.color = "red";
     } else {

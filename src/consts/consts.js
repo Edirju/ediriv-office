@@ -102,7 +102,36 @@ export const PROJECTS = [
     },
     youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
   },
-  
+  {
+    slug: "11-calculadora-v1",
+    title: "Calculadora JS",
+    description: "calculadora con funciones aritméticas básicas.",
+    learnings: ["Custom CSS", "Funciones", "Condicionales"],
+    theme: {
+      isDark: false,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
+  {
+    slug: "12-movie-seat-booking",
+    title: "Reserva de asientos cine",
+    description: "Simulador que permite asignar asientos de cine a los usuarios.",
+    learnings: ["Custom CSS", "Funciones", "Condicionales"],
+    theme: {
+      isDark: true,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
+  {
+    slug: "13-exchange-rate",
+    title: "Conversor de monedas",
+    description: "Aplicacion que nos permite calcular el valor de una moneda en otra.",
+    learnings: ["Custom CSS", "Funciones", "Condicionales"],
+    theme: {
+      isDark: false,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
   // {
   //   slug: "07-chatgpt-local",
   //   title: "ChatGPT local",
