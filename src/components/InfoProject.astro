@@ -12,8 +12,8 @@ const { isDark = false } = theme;
           class:list={[
             "text-4xl tracking-tighter px-1 inline-block bg-clip-text text-transparent bg-gradient-to-r",
             {
-              "from-slate-400 to-slate-600": !isDark,
-              "from-slate-100 via-slate-400 to-slate-500": isDark,
+              "from-blue-400 to-slate-600": !isDark,
+              "from-yellow-500 via-slate-500 to-slate-600": isDark,
             }
           ]}
         > 
@@ -22,7 +22,7 @@ const { isDark = false } = theme;
 
         <span
           class:list={[
-            isDark ? "text-[rgb(var(--light))]" : "text-[rgb(var(--dark),.85)]",
+            isDark ? "text-[rgb(var(--light),.8)]" : "text-[rgb(var(--dark),.85)]",
             "tracking-tighter text-slate-800 text-sm"
           ]}
         > 
