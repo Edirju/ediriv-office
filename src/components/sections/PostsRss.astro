@@ -24,10 +24,12 @@ import { posteos } from "../../consts/social-rss.json";
             return (
               <li>
                 <a href={url}>
-                  <Rss size={16} />
-                  <div class="border-l border-[rgb(var(--dark),.35)] pl-2">
-                    <h3 class="text-sm font-bold">{title}</h3>
-                    <p class="text-xs font-extralight text-[rgb(var(--dark),.5)]">
+                  <Rss size={16} class="text-[rgb(var(--light),.85)]" />
+                  <div class="border-l border-[rgb(var(--light),.35)] pl-2">
+                    <h3 class="text-sm font-bold text-[rgb(var(--light),.65)]">
+                      {title}
+                    </h3>
+                    <p class="text-xs font-extralight text-[rgb(var(--light),.5)]">
                       {network}
                     </p>
                   </div>
@@ -48,6 +50,7 @@ import { posteos } from "../../consts/social-rss.json";
       @apply flex flex-col gap-4;
       & h2 {
         @apply flex items-center gap-2 text-xl font-bold text-pretty tracking-tighter;
+        color: rgb(var(--light), 0.85);
       }
       & p {
         @apply text-sm font-light text-pretty leading-5;

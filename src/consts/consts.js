@@ -132,6 +132,16 @@ export const PROJECTS = [
     },
     youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
   },
+  {
+    slug: "14-hangman",
+    title: "Juego El Ahorcado",
+    description: "Aplicacion que nos permite calcular el valor de una moneda en otra.",
+    learnings: ["Custom CSS", "Funciones", "Condicionales"],
+    theme: {
+      isDark: false,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
   // {
   //   slug: "07-chatgpt-local",
   //   title: "ChatGPT local",

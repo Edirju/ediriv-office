@@ -48,7 +48,7 @@ import {
       </p>
     </header>
 
-    <footer class="stock-ticker shadow-[inset_-12px_-8px_40px_#FFFEFE10]">
+    <footer class="stock-ticker shadow-[inset_-12px_-8px_40px_#1e252c10]">
       <ul>
         <li class="minus">
           <Html5 class="w-4 h-4" />
@@ -268,21 +268,22 @@ import {
 <style>
   article {
     @apply flex flex-col gap-4 animate-fade-in-up;
-    color: rgb(var(--dark), 0.85);
+    color: rgb(var(--light), 0.85);
     & header {
-      @apply flex flex-col gap-4 [&>p>strong]:text-[rgb(var(--dark),0.85)] [&>p>strong]:font-medium [&>p>strong]:bg-[rgb(var(--primary-50),.8)] [&>p>strong]:font-mono [&>p>strong]:px-1 [&>p>strong]:py-0.5 [&>p>strong]:text-xs;
+      @apply flex flex-col gap-4 [&>p>strong]:text-[rgb(var(--dark),0.85)] [&>p>strong]:font-medium [&>p>strong]:bg-[rgb(var(--primary-50),.85)] [&>p>strong]:font-mono [&>p>strong]:px-1 [&>p>strong]:py-0.5 [&>p>strong]:text-xs;
       & h2 {
         @apply flex items-center gap-2 text-xl font-bold text-pretty tracking-tighter;
       }
       & p {
         @apply text-sm font-light text-pretty leading-5 tracking-tight;
-        color: rgb(var(--dark), 0.65);        
+        color: rgb(var(--light), 0.65);        
       }
     }
   }
 
   .stock-ticker {
-    color: rgb(var(--light), 1);
+    color: rgb(var(--dark),.85);
+    background: transparent;
     font-size: 14px;
     text-transform: uppercase;
     padding-block: 24px 0;
@@ -296,7 +297,7 @@ import {
     mask-image: linear-gradient(
       to right,
       transparent,
-      rgb(var(--light)) 10% 90%,
+      rgb(var(--dark)) 20% 80%,
       transparent
     );
   }
@@ -308,6 +309,7 @@ import {
     justify-content: space-between;
     align-items: center;
     gap: var(--gap);
+    background: transparent;
 
     animation: scroll 30s linear infinite;
   }
@@ -320,7 +322,7 @@ import {
     }
   }
   .stock-ticker ul li {
-    @apply flex items-center rounded-lg px-3 py-2 gap-2 justify-center bg-[rgb(var(--accent-50),.08)];
+    @apply flex items-center rounded-lg px-3 py-2 gap-2 justify-center bg-[rgb(var(--light),.85)];
   }
   .stock-ticker ul:first-child {
     /* background-color: yellow; */
@@ -344,10 +346,10 @@ import {
   } */
   .stock-ticker .plus,
   .stock-ticker .plus::before {
-    color: rgb(var(--accent-65), 0.85);
+    color: rgb(var(--accent-65));
   }
   .stock-ticker .minus,
   .stock-ticker .minus::before {
-    color: rgb(var(--dark), 0.85);
+    color: rgb(var(--dark));
   }
 </style>

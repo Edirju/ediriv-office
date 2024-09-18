@@ -14,7 +14,7 @@ const today = new Date();
 <Section>
   <footer>
     <div class="title">
-      <img src="/avatar.svg" alt="" />
+      <!-- <img src="/avatar.svg" alt="" /> -->
       <h3>Edinson Rivera • Desarrollo Web • Community Manager</h3>
       <p>
         &copy; {today.getFullYear()} @edirju. All rights reserved.
@@ -54,7 +54,7 @@ const today = new Date();
 
 <style>
   footer {
-    @apply text-center font-light text-[rgb(var(--dark),0.65)] text-sm;
+    @apply text-center font-light text-[rgb(var(--light),0.65)] text-sm;
     & .title {
       @apply flex flex-col items-center gap-2;
       & h3 {
@@ -63,19 +63,19 @@ const today = new Date();
       & p {
         @apply tracking-wide;
         font-size: clamp(12px, 1.5vw, 14px);
-        color: rgb(var(--dark), 0.45);
+        color: rgb(var(--light), 0.45);
       }
     }
     & .social-links {
       @apply flex justify-center gap-4 mt-4;
       & a {
         text-decoration: none;
-        color: rgb(var(--dark), 0.85);
+        color: rgb(var(--light), 0.85);
         transition-property: transform, color;
         transition-duration: 0.3s, 0.5s;
         transition-delay: 0s, 0.1s;
         &:hover {
-          color: rgb(var(--accent-65), 1);
+          color: rgb(var(--primary-50), 1);
           transform: scale(1.2) rotate(360deg);
         }
       }

@@ -5,18 +5,21 @@ import Hero from "../components/sections/Hero.astro";
 import Skills from "../components/sections/Skills.astro";
 import Proyectos from "../components/sections/Proyectos.astro";
 import Footer from "../components/Footer.astro";
+
+import { basics } from "../consts/landing.json";
+const { name, label } = basics;
 ---
 
-<Layout title="Bienvenidos">
+<Layout title=`Portfolio de ${name} • ${label}`>
   <main>
     <div
-      class="absolute inset-0 -z-10 h-full w-full bg-[rgb(var(--light))] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+      class="absolute inset-0 -z-10 h-full w-full bg-[rgb(var(--dark))] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_14px]"
     >
       <div
-        class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-[rgb(var(--accent-65))] opacity-20 blur-[100px]"
+        class="absolute left-0 right-0 top-0 -z-10 m-auto h-[330px] w-[330px] rounded-full bg-[rgb(var(--light))] opacity-20 blur-[100px]"
       >
       </div>
-    </div>    
+    </div>
     <Header />
     <Hero />
     <Skills />

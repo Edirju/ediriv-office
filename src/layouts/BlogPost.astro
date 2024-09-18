@@ -13,10 +13,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <Layout title={title}>
   <main>
     <div
-      class="absolute inset-0 -z-10 h-full w-full bg-[rgb(var(--light))] bg-[linear-gradient(to_right,#8080800a_.0625rem,transparent_.0625rem),linear-gradient(to_bottom,#8080800a_.0625rem,transparent_.0625rem)] bg-[size:.875rem_1.5rem]"
+      class="absolute inset-0 -z-10 h-full w-full bg-[rgb(var(--dark))] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_14px]"
     >
       <div
-        class="absolute left-0 right-0 top-0 -z-10 m-auto h-[19.375rem] w-[19.375rem] rounded-full bg-[rgb(var(--accent-65))] opacity-20 blur-[6.25rem]"
+        class="absolute left-0 right-0 top-0 -z-10 m-auto h-[330px] w-[330px] rounded-full bg-[rgb(var(--light))] opacity-20 blur-[100px]"
       >
       </div>
     </div>
@@ -74,7 +74,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     max-width: calc(100% - 2em);
     margin: auto;
     padding: 1em;
-    color: rgb(var(--dark), 0.85);
+    color: rgb(var(--light), 0.85);
     font-size: 14px;
     letter-spacing: 0.009em;
     text-wrap: pretty;
@@ -85,7 +85,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     padding: 1em 0;
     text-align: center;
     line-height: 1;
-    color: rgb(var(--dark), 0.85);
+    color: rgb(var(--light), 0.85);
     font-size: 2rem;
     font-weight: 700;
   }
@@ -94,7 +94,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   }
   .date {
     margin-bottom: 0.5em;
-    color: rgb(var(--accent-65), 0.65);
+    color: rgb(var(--accent-50), 0.65);
     font-family: var(--font-mono);
     font-size: 14px;
   }
