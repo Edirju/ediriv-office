@@ -115,7 +115,8 @@ export const PROJECTS = [
   {
     slug: "12-movie-seat-booking",
     title: "Reserva de asientos cine",
-    description: "Simulador que permite asignar asientos de cine a los usuarios.",
+    description:
+      "Simulador que permite asignar asientos de cine a los usuarios.",
     learnings: ["Custom CSS", "Funciones", "Condicionales"],
     theme: {
       isDark: true,
@@ -125,7 +126,8 @@ export const PROJECTS = [
   {
     slug: "13-exchange-rate",
     title: "Conversor de monedas",
-    description: "Aplicacion que nos permite calcular el valor de una moneda en otra.",
+    description:
+      "Aplicacion que nos permite calcular el valor de una moneda en otra.",
     learnings: ["Custom CSS", "Funciones", "Condicionales"],
     theme: {
       isDark: false,
@@ -135,23 +137,55 @@ export const PROJECTS = [
   {
     slug: "14-hangman",
     title: "Juego El Ahorcado",
-    description: "Aplicacion que nos permite calcular el valor de una moneda en otra.",
+    description:
+      "Aplicacion que nos permite calcular el valor de una moneda en otra.",
     learnings: ["Custom CSS", "Funciones", "Condicionales"],
     theme: {
       isDark: false,
     },
     youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
   },
-  // {
-  //   slug: "07-chatgpt-local",
-  //   title: "ChatGPT local",
-  //   description: "Usa IA de forma local y gratis. 100% privacidad.",
-  //   learnings: ["Web Workers", "IA", "ESModules"],
-  //   theme: {
-  //     isDark: false,
-  //   },
-  //   youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
-  // },
+  {
+    slug: "15-arkanoid-game",
+    title: "Arkanoid",
+    description:
+      "Juego mítico y clásico de Arkanoid para controlar con teclado.",
+    learnings: [
+      "Dibujar en Canvas",
+      "Eventos de teclado",
+      "RequestAnimationFrame",
+      "Sprites",
+    ],
+    theme: {
+      isDark: false,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
+  {
+    slug: "16-breakout-game",
+    title: "Breakout",
+    description:
+      "Juego clásico de Breakout para controlar con teclado y mouse.",
+    learnings: [
+      "Dibujar en Canvas",
+      "Eventos de teclado",
+      "Clases"      
+    ],
+    theme: {
+      isDark: false,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
+  {
+    slug: "17-chatgpt-local",
+    title: "ChatGPT local",
+    description: "Usa IA de forma local y gratis. 100% privacidad.",
+    learnings: ["Web Workers", "IA", "ESModules"],
+    theme: {
+      isDark: false,
+    },
+    youtube: "https://www.youtube.com/watch?v=HvoiF1MCPGs",
+  },
   // {
   //   slug: "08-tetris-canvas",
   //   title: "Tetris en Canvas",

@@ -19,12 +19,12 @@ const isActive = href === pathname || href === "/" + subpath?.[0];
     @apply flex items-center gap-1 no-underline;
     transition: color 0.3s ease;
     &:hover {
-      color: rgb(var(--accent-50));
+      color: rgb(var(--accent-65));
       text-shadow: 0 0 0.5rem rgb(var(--accent-50), 0.25);
     }
     &.active {
       @apply underline underline-offset-2;
-      color: rgb(var(--light));
+      color: rgb(var(--accent-65));
     }
   }
 </style>

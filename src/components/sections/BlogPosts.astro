@@ -10,7 +10,7 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Section>
-  <article class="flex flex-col gap-8 text-[rgb(var(--light),.85)]">
+  <article class="flex flex-col gap-8 text-[rgb(var(--dark),.85)]">
     <header class="flex flex-col gap-4">
       <h2
         class="flex items-center gap-1 text-xl font-bold text-pretty tracking-tighter"
@@ -53,7 +53,7 @@ const posts = (await getCollection("blog")).sort(
 
 <style>
   ul {
-    @apply flex flex-wrap gap-4 text-[rgb(var(--light),.85)] list-none;
+    @apply flex flex-wrap gap-4 text-[rgb(var(--dark),.85)] list-none;
     & li {
       width: calc(50% - 16px);
     }
@@ -81,17 +81,17 @@ const posts = (await getCollection("blog")).sort(
     }
     & .title {
       margin: 0;
-      color: rgb(var(--light), 0.75);
+      color: rgb(var(--dark), 0.85);
       line-height: 1;
     }
     & .date {
       margin: 0;
-      color: rgb(var(--light), 0.5);
+      color: rgb(var(--dark), 0.5);
       font-family: var(--font-mono);
     }
     & li a:hover h4,
     & li a:hover .date {
-      color: rgb(var(--accent-50), 0.85);
+      color: rgb(var(--accent-65), 0.85);
     }
     & li a:hover img {
       box-shadow: var(--box-shadow);

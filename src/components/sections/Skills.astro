@@ -48,7 +48,7 @@ import {
       </p>
     </header>
 
-    <footer class="stock-ticker shadow-[inset_-12px_-8px_40px_#1e252c10]">
+    <footer class="stock-ticker shadow-[inset_-12px_-8px_40px_#fffefe10]">
       <ul>
         <li class="minus">
           <Html5 class="w-4 h-4" />
@@ -268,7 +268,7 @@ import {
 <style>
   article {
     @apply flex flex-col gap-4 animate-fade-in-up;
-    color: rgb(var(--light), 0.85);
+    color: rgb(var(--dark), 0.85);
     & header {
       @apply flex flex-col gap-4 [&>p>strong]:text-[rgb(var(--dark),0.85)] [&>p>strong]:font-medium [&>p>strong]:bg-[rgb(var(--primary-50),.85)] [&>p>strong]:font-mono [&>p>strong]:px-1 [&>p>strong]:py-0.5 [&>p>strong]:text-xs;
       & h2 {
@@ -276,7 +276,7 @@ import {
       }
       & p {
         @apply text-sm font-light text-pretty leading-5 tracking-tight;
-        color: rgb(var(--light), 0.65);        
+        color: rgb(var(--dark), 0.65);        
       }
     }
   }
@@ -322,7 +322,8 @@ import {
     }
   }
   .stock-ticker ul li {
-    @apply flex items-center rounded-lg px-3 py-2 gap-2 justify-center bg-[rgb(var(--light),.85)];
+    @apply flex items-center rounded-lg px-3 py-2 gap-2 justify-center bg-[rgb(var(--accent-50),.08)];
+    
   }
   .stock-ticker ul:first-child {
     /* background-color: yellow; */

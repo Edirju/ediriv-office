@@ -13,13 +13,13 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
 <Section>
   <header class="flex flex-col gap-4 mb-4">
     <h2
-      class="flex items-center gap-2 text-xl font-bold text-[rgb(var(--light),.85)] text-pretty tracking-tighter"
+      class="flex items-center gap-2 text-xl font-bold text-[rgb(var(--dark),.85)] text-pretty tracking-tighter"
     >
       <Data class="w-6 h-6" />
       Proyectos
     </h2>
     <p
-      class="text-sm font-light text-pretty leading-5 text-[rgb(var(--light),.55)] tracking-tight"
+      class="text-sm font-light text-pretty leading-5 text-[rgb(var(--dark),.65)] tracking-tight"
     >
       Tengo la inquietante necesidad de construir cosas. A veces el trabajo
       fluye con facilidad, otras veces me cuestiono mis decisiones.
@@ -30,7 +30,7 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
     class="grid gap-4 mb-6 lg:mb-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto"
   >
     <article
-      class="relative text-[rgb(var(--dark),.85)] min-h-60 items-center rounded-lg bg-gray-100/60"
+      class="relative text-[rgb(var(--dark),.85)] min-h-60 items-center rounded-lg bg-purple-100/50"
     >
       <a
         href="#"
@@ -43,6 +43,7 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
         siguiente proyecto...
       </a>
     </article>
+
     {
       finalProjects.map((project, reversedIndex) => {
         const index = finalProjects.length - reversedIndex - 1;
@@ -63,22 +64,22 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
               />
             </a>
             <div class="p-2">
-              <h2 class="text-[18px] font-semibold tracking-tighter text-[rgb(var(--light),.85)]">
+              <h2 class="text-[18px] font-semibold tracking-tighter text-[rgb(var(--dark),.85)]">
                 <a
                   href={`/${project.slug}`}
-                  class="hover:text-[rgb(var(--accent-50),.85)] transition"
+                  class="hover:text-[rgb(var(--accent-65),.85)] transition"
                 >
                   {project.title}
                 </a>
               </h2>
 
-              <p class="mt-3 mb-4 font-light text-[rgb(var(--light),.55)] text-xs text-pretty">
+              <p class="mt-3 mb-4 font-light text-[rgb(var(--dark),.65)] text-xs text-pretty">
                 {project.description}.
               </p>
 
               <ul class="inline-flex flex-wrap gap-2">
                 {project.learnings.map((learning) => (
-                  <li class="text-[10px] font-light font-mono text-[rgb(var(--light),.6)] tracking-tight bg-[rgb(var(--light),.05)] px-2 py-1 rounded-full">
+                  <li class="text-[10px] font-light font-mono text-[rgb(var(--dark),.6)] tracking-tight bg-[rgb(var(--accent-50),.10)] px-2 py-1 rounded-full">
                     {learning}
                   </li>
                 ))}
@@ -99,7 +100,7 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
                 <li>
                   <a
                     href={`/${project.slug}`}
-                    class="inline-flex gap-1 items-center justify-center px-2 py-1 text-xs font-semibold text-center text-[rgb(var(--accent-65),.65)] bg-[rgb(var(--light))] transition border border-[rgb(var(--accent-65),.25)] rounded-lg hover:bg-[rgb(var(--accent-50),.9)] hover:text-[rgb(var(--dark),.85)]"
+                    class="inline-flex gap-1 items-center justify-center px-2 py-1 text-xs font-semibold text-center text-[rgb(var(--accent-65),.65)] bg-[rgb(var(--light))] transition border border-[rgb(var(--accent-65),.25)] rounded-lg hover:bg-[rgb(var(--accent-65),.9)] hover:text-[rgb(var(--accent-50),.85)]"
                   >
                     <WorldMap class="w-4 h-4" />
                     Demo

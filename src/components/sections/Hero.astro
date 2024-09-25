@@ -112,44 +112,45 @@ const printInfo = [
 <style>
   .hero-section {
     @apply flex flex-row items-center justify-center gap-4 animate-fade-in-up;
-    color: rgb(var(--light), 0.65);
+    color: rgb(var(--dark), 0.85);
   }
   .hero-image {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     width: 50%;
     & img {
-      @apply rounded-2xl order-1 object-cover w-52 h-full p-1 bg-[rgb(var(--light))] rotate-3 dark:bg-[rgb(var(--primary-50),0.10)] drop-shadow-lg;
+      @apply rounded-2xl order-1 object-cover w-52 h-full p-1 bg-[rgb(var(--light))] rotate-3 dark:bg-[rgb(var(--accent-50),0.10)] drop-shadow-lg;
     }    
   }
   .hero-info {
     @apply flex flex-col gap-2;
     & h1 {
-      @apply font-black tracking-tighter leading-tight text-pretty bg-clip-text text-transparent bg-gradient-to-r from-[rgb(var(--light),0.90)] to-[rgb(var(--primary-50))];
+      @apply font-black tracking-tighter leading-tight text-pretty bg-clip-text text-transparent bg-gradient-to-r from-[rgb(var(--dark),0.70)] to-[rgb(var(--dark))];
       font-size: clamp(24px, 2.105vw + 1.079rem, 36px);
     }
     & h2 {
-      @apply text-pretty tracking-wide font-thin;
+      @apply text-pretty tracking-wide font-light;
       font-size: clamp(15.008px, 0.25vw + 14.256px, 16px);
       
     }
     & span {
-      @apply flex items-center gap-1 text-sm text-pretty font-thin tracking-wide;
-      color: rgb(var(--primary-50), 0.85);
+      @apply flex items-center gap-1 text-sm text-pretty font-light tracking-wide;
+      color: rgb(var(--accent-65), 0.65);
       font-family: var(--font-mono);
     }
   }
   footer {
     @apply flex items-center gap-2;
-    color: rgb(var(--light), 0.65);
+    color: rgb(var(--dark), 0.65);
     & a {
       @apply inline-flex items-center justify-center size-8 rounded-md;
-      border: 1px solid rgb(var(--light), 0.10);
+      background: rgb(var(--light));
+      border: 1px solid rgb(var(--dark), 0.10);
       transition: all 0.3s ease;
       &:hover {
-        border: 1px solid rgb(var(--primary-50), 0.25);
-        background: rgb(var(--primary-50), 0.05);
-        color: rgb(var(--primary-50));
+        border: 1px solid rgb(var(--accent-65), 0.25);
+        background: rgb(var(--accent-50), 0.08);
+        color: rgb(var(--accent-65));
       }
     }
   }
