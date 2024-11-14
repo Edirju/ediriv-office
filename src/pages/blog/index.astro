@@ -1,10 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
 import Header from "../../components/Header.astro";
 import PostsRss from "../../components/sections/PostsRss.astro";
 import BlogPosts from "../../components/sections/BlogPosts.astro";
 import Footer from "../../components/Footer.astro";
-
 import { basics } from "../../consts/landing.json";
 const { name, label, image, location, profiles, phone, email } = basics;
 import {
@@ -24,7 +24,6 @@ const SOCIAL_ICONS: Record<string, any> = {
   Facebook,
 };
 ---
-
 <Layout title={`Galería de Proyectos de ${name} • ${label}`}>
   <main>
     <div
@@ -36,41 +35,8 @@ const SOCIAL_ICONS: Record<string, any> = {
       </div>
     </div>
     <Header />
-    <!-- Hero -->
-    <section class="flex flex-col justify-center max-w-xl mx-auto items-center">
-      <h1
-        class="font-bold items-center mb-8 mt-4 flex gap-4 animate-fade-in-up"
-      >
-        <span class="flex flex-col text-center gap-3 sm:gap-0">
-          <span
-            class="text-[38px] tracking-tighter px-1 inline-block bg-clip-text text-transparent bg-gradient-to-r from-[rgb(var(--dark),0.85)] to-[rgb(var(--accent-50),0.95)] sm:text-[70px]"
-          >
-            Blog+
-          </span>
-          <span
-            class="tracking-tighter text-[rgb(var(--dark),0.85)] text-3xl sm:text-[48px] md:-mt-4 -mt-6"
-          >
-            Notas
-          </span>
-        </span>
-        <span class="rotate-6">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="128"
-            height="128"
-            viewBox="0 0 24 24"
-            style="fill: rgb(var(--accent-50),.65);"
-            ><path
-              d="M21 20V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2zM9 18H7v-2h2v2zm0-4H7v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm2-5H5V7h14v2z"
-            ></path>
-          </svg>
-        </span>
-      </h1>
-    </section>
-
-    <section
-      class="flex flex-col max-w-3xl mx-auto mb-12 gap-12 px-4 md:px-0"
-    >
+    <!-- Hero -->    
+    <Section>
       <article
         class="flex flex-col items-center justify-center gap-10 md:flex-row"
       >
@@ -116,8 +82,7 @@ const SOCIAL_ICONS: Record<string, any> = {
           class="order-1 object-cover w-52 h-full p-1 bg-[rgb(var(--light),.5)] md:order-2 rotate-3 lg:p-2 aspect-square rounded-2xl dark:bg-[rgb(var(--accent-50),0.10)]"
         />
       </article>
-    </section>
-
+    </Section>    
     <BlogPosts />
     <PostsRss />
     <Footer />

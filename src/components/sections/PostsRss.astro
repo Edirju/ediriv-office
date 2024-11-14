@@ -23,7 +23,7 @@ import { posteos } from "../../consts/social-rss.json";
           posteos.map(({ network, title, description, url, date }) => {
             return (
               <li>
-                <a href={url}>
+                <a href={url} target="_blank" rel="noopener noreferrer">
                   <Rss size={16} class="text-[rgb(var(--dark),.85)]" />
                   <div class="border-l border-[rgb(var(--dark),.35)] pl-2">
                     <h3 class="text-sm font-bold text-[rgb(var(--dark),.65)]">

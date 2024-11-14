@@ -11,7 +11,9 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
 ---
 
 <Section>
-  <header class="flex flex-col gap-4 mb-4">
+  <header
+    class="flex flex-col gap-4 mb-4 [&>p>strong]:text-[rgb(var(--dark),0.65)] [&>p>strong]:font-bold [&>p>strong]:bg-[rgb(var(--primary-50),.65)] [&>p>strong]:px-2 [&>p>strong]:py-0.5 [&>p>strong]:text-xs"
+  >
     <h2
       class="flex items-center gap-2 text-xl font-bold text-[rgb(var(--dark),.85)] text-pretty tracking-tighter"
     >
@@ -21,8 +23,11 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
     <p
       class="text-sm font-light text-pretty leading-5 text-[rgb(var(--dark),.65)] tracking-tight"
     >
-      Tengo la inquietante necesidad de construir cosas. A veces el trabajo
-      fluye con facilidad, otras veces me cuestiono mis decisiones.
+      Tengo la inquietante necesidad de <strong>construir</strong> cosas. A veces
+      el trabajo fluye con facilidad, otras veces me cuestiono mis decisiones. Nunca
+      dejo de <strong>aprender</strong>. He aquí varias <strong
+        >recopilaciones</strong
+      > a lo largo de este camino.
     </p>
   </header>
 
@@ -121,6 +126,11 @@ import { Github, Twitch, Instagram } from "simple-icons-astro";
         );
       })
     }
-    
   </div>
 </Section>
+
+<style>
+  strong {
+    font-family: var(--font-mono);
+  }
+</style>

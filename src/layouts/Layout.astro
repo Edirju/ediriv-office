@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/inter";
 import "@fontsource-variable/inconsolata";
+import "@fontsource/source-sans-pro";
 import { ViewTransitions } from "astro:transitions";
 interface Props {
   title: string;
@@ -26,7 +27,7 @@ const description = "Welcome to my website!";
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body>    
+  <body>
     <slot />
   </body>
 </html>
@@ -34,7 +35,7 @@ const description = "Welcome to my website!";
 <style is:global>
   :root {
     --font-heading: "Inter Variable", sans-serif;
-    --font-body: "Inter Variable", sans-serif;
+    --font-body: "Source Sans Pro", sans-serif;
     --font-mono: "Inconsolata Variable", monospace;
 
     --white: 255, 255, 255; /* #FFFFFF */
@@ -52,10 +53,13 @@ const description = "Welcome to my website!";
   }
   html,
   body {
-    font-family: var(--font-body);  
+    font-family: var(--font-body);
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: var(--font-heading);
   }
   html {
-    background: rgb(var(--light), 1);    
+    background: rgb(var(--light), 1);
   }
   code {
     font-family: var(--font-mono);

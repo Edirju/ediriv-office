@@ -7,9 +7,10 @@ import { work } from "../../consts/cv.json";
   <ul>
     {
       work.map(
-        ({name, startDate, endDate, position, summary, url, highlights}) => {
+        ({ name, startDate, endDate, position, summary, url, highlights }) => {
           const startYear = new Date(startDate).getFullYear();
-          const endYear = endDate != null ? new Date(endDate).getFullYear() : 'Actual';
+          const endYear =
+            endDate != null ? new Date(endDate).getFullYear() : "Actual";
           const years = `${startYear} - ${endYear}`;
 
           return (
@@ -18,28 +19,20 @@ import { work } from "../../consts/cv.json";
                 <header>
                   <div>
                     <h3>
-                      <a 
-                        href={url}
-                        title={`Ver ${name}`}
-                        target="_blank"
-                      >
+                      <a href={url} title={`Ver ${name}`} target="_blank">
                         {name}
                       </a>
                     </h3>
-                    <h4>
-                      {position}
-                    </h4>
+                    <h4>{position}</h4>
                   </div>
-                  <time>
-                    {years}
-                  </time>
+                  <time>{years}</time>
                 </header>
                 <footer>
                   <p>{summary}</p>
                 </footer>
               </article>
             </li>
-          )
+          );
         }
       )
     }
@@ -54,18 +47,21 @@ import { work } from "../../consts/cv.json";
     @apply flex justify-between items-start mb-1;
     & h3 {
       @apply text-base font-medium;
-      color: rgb(var(--dark),.85);
+      color: rgb(var(--dark), 0.85);
+      font-family: var(--font-heading);
       &:hover {
         @apply underline underline-offset-2;
       }
     }
     & h4 {
       @apply text-sm font-normal;
-      color: rgb(var(--dark),.65);
+      color: rgb(var(--dark), 0.65);
+      font-family: var(--font-heading);
     }
     & time {
       @apply text-xs min-w-[102px];
-      color: rgb(var(--dark),.55);
+      font-family: var(--font-heading);
+      color: rgb(var(--dark), 0.55);
     }
   }
   footer {

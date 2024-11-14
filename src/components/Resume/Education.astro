@@ -62,18 +62,21 @@ import { education } from "../../consts/cv.json";
   }
   h3 {
     @apply text-base font-medium;
-    color: rgb(var(--dark),.85);
+    color: rgb(var(--dark), 0.85);
+    font-family: var(--font-heading);
     &:hover {
       @apply underline underline-offset-2;
     }
   }
   h4 {
     @apply text-sm font-normal;
-    color: rgb(var(--dark),.65);
+    font-family: var(--font-heading);
+    color: rgb(var(--dark), 0.65);
   }
   time {
     @apply text-xs min-w-[102px];
-    color: rgb(var(--dark),.55);
+    color: rgb(var(--dark), 0.55);
+    font-family: var(--font-heading);
   }
   footer {
     & p {

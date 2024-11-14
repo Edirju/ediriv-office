@@ -50,7 +50,13 @@ const printInfo = [
     <div class="hero-info">
       <h1>{name}</h1>
       <h2>
-        {label}
+        <!-- {label} -->
+        <p>
+          Ingeniero de Sistemas con intereses en <strong>Desarrollo Web</strong>
+          & <strong>Community Manager</strong>. A veces el trabajo fluye con
+          facilidad, otras veces me cuestiono mis decisiones. Escribo sobre
+          cualquier cosa relacionada con la <strong>tecnología</strong>, <strong>marketing digital</strong> y de vez en cuando sobre <strong>cosas interesantes</strong>cruzan en mí camino.
+        </p>
       </h2>
       <span>
         <WorldMap />
@@ -117,21 +123,25 @@ const printInfo = [
   .hero-image {
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    width: 50%;
+    width: 100%;
     & img {
-      @apply rounded-2xl order-1 object-cover w-52 h-full p-1 bg-[rgb(var(--light))] rotate-3 dark:bg-[rgb(var(--accent-50),0.10)] drop-shadow-lg;
-    }    
+      @apply rounded-2xl order-1 object-cover w-52 h-full p-1 bg-[rgb(var(--light))] rotate-3 dark:bg-[rgb(var(--primary-50),0.10)] drop-shadow-lg;
+    }
   }
   .hero-info {
     @apply flex flex-col gap-2;
     & h1 {
-      @apply font-black tracking-tighter leading-tight text-pretty bg-clip-text text-transparent bg-gradient-to-r from-[rgb(var(--dark),0.70)] to-[rgb(var(--dark))];
+      @apply font-black tracking-tighter leading-tight text-pretty bg-clip-text text-transparent bg-gradient-to-r from-[rgb(var(--dark),0.60)] to-[rgb(var(--dark))];
       font-size: clamp(24px, 2.105vw + 1.079rem, 36px);
     }
     & h2 {
-      @apply text-pretty tracking-wide font-light;
-      font-size: clamp(15.008px, 0.25vw + 14.256px, 16px);
-      
+      @apply text-pretty tracking-wide [&>p>strong]:text-[rgb(var(--dark),0.65)] [&>p>strong]:font-bold [&>p>strong]:bg-[rgb(var(--primary-50),.65)] [&>p>strong]:px-2 [&>p>strong]:py-0.5 [&>p>strong]:text-xs;
+      font-size: 1rem;
+      font-weight: 300;
+      font-family: var(--font-body);
+      & strong {
+        font-family: var(--font-mono);
+      }
     }
     & span {
       @apply flex items-center gap-1 text-sm text-pretty font-light tracking-wide;
@@ -145,7 +155,7 @@ const printInfo = [
     & a {
       @apply inline-flex items-center justify-center size-8 rounded-md;
       background: rgb(var(--light));
-      border: 1px solid rgb(var(--dark), 0.10);
+      border: 1px solid rgb(var(--dark), 0.1);
       transition: all 0.3s ease;
       &:hover {
         border: 1px solid rgb(var(--accent-65), 0.25);
@@ -164,6 +174,10 @@ const printInfo = [
     figure {
       @apply flex items-center justify-center;
       margin: 0 auto;
+    }
+    .hero-image {
+      width: 50%;
+      object-fit: cover;
     }
   }
 </style>
